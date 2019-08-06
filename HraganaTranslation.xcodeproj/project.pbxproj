@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		451C09C022F93F4E00A70E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09BF22F93F4E00A70E00 /* AppDelegate.swift */; };
-		451C09C222F93F4E00A70E00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09C122F93F4E00A70E00 /* ViewController.swift */; };
-		451C09C522F93F4E00A70E00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451C09C322F93F4E00A70E00 /* Main.storyboard */; };
 		451C09C722F93F4F00A70E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451C09C622F93F4F00A70E00 /* Assets.xcassets */; };
 		451C09CA22F93F4F00A70E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451C09C822F93F4F00A70E00 /* LaunchScreen.storyboard */; };
+		451C09D422F9407100A70E00 /* InputOutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09D322F9407100A70E00 /* InputOutputViewController.swift */; };
+		451C09D622F9408500A70E00 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09D522F9408500A70E00 /* FavoriteViewController.swift */; };
+		451C09D922F9409800A70E00 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09D722F9409800A70E00 /* FavoriteCollectionViewCell.swift */; };
+		451C09DA22F9409800A70E00 /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451C09D822F9409800A70E00 /* FavoriteCollectionViewCell.xib */; };
+		451C09DD22F940DF00A70E00 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09DC22F940DF00A70E00 /* NavigationController.swift */; };
+		451C09DF22F940F600A70E00 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09DE22F940F600A70E00 /* TabBarController.swift */; };
+		451C09E622F9419D00A70E00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451C09E422F9419D00A70E00 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		451C09BC22F93F4E00A70E00 /* HraganaTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HraganaTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		451C09BF22F93F4E00A70E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		451C09C122F93F4E00A70E00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		451C09C422F93F4E00A70E00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		451C09C622F93F4F00A70E00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		451C09C922F93F4F00A70E00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		451C09CB22F93F4F00A70E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		451C09D322F9407100A70E00 /* InputOutputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOutputViewController.swift; sourceTree = "<group>"; };
+		451C09D522F9408500A70E00 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		451C09D722F9409800A70E00 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		451C09D822F9409800A70E00 /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
+		451C09DC22F940DF00A70E00 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		451C09DE22F940F600A70E00 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		451C09E522F9419D00A70E00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +65,26 @@
 			isa = PBXGroup;
 			children = (
 				451C09BF22F93F4E00A70E00 /* AppDelegate.swift */,
-				451C09C122F93F4E00A70E00 /* ViewController.swift */,
-				451C09C322F93F4E00A70E00 /* Main.storyboard */,
+				451C09D322F9407100A70E00 /* InputOutputViewController.swift */,
+				451C09DB22F9409D00A70E00 /* FavoriteScreen */,
+				451C09DC22F940DF00A70E00 /* NavigationController.swift */,
+				451C09DE22F940F600A70E00 /* TabBarController.swift */,
+				451C09E422F9419D00A70E00 /* Main.storyboard */,
 				451C09C622F93F4F00A70E00 /* Assets.xcassets */,
 				451C09C822F93F4F00A70E00 /* LaunchScreen.storyboard */,
 				451C09CB22F93F4F00A70E00 /* Info.plist */,
 			);
 			path = HraganaTranslation;
+			sourceTree = "<group>";
+		};
+		451C09DB22F9409D00A70E00 /* FavoriteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				451C09D522F9408500A70E00 /* FavoriteViewController.swift */,
+				451C09D722F9409800A70E00 /* FavoriteCollectionViewCell.swift */,
+				451C09D822F9409800A70E00 /* FavoriteCollectionViewCell.xib */,
+			);
+			path = FavoriteScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				451C09CA22F93F4F00A70E00 /* LaunchScreen.storyboard in Resources */,
+				451C09E622F9419D00A70E00 /* Main.storyboard in Resources */,
 				451C09C722F93F4F00A70E00 /* Assets.xcassets in Resources */,
-				451C09C522F93F4E00A70E00 /* Main.storyboard in Resources */,
+				451C09DA22F9409800A70E00 /* FavoriteCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				451C09C222F93F4E00A70E00 /* ViewController.swift in Sources */,
+				451C09D922F9409800A70E00 /* FavoriteCollectionViewCell.swift in Sources */,
+				451C09D422F9407100A70E00 /* InputOutputViewController.swift in Sources */,
+				451C09DD22F940DF00A70E00 /* NavigationController.swift in Sources */,
+				451C09DF22F940F600A70E00 /* TabBarController.swift in Sources */,
+				451C09D622F9408500A70E00 /* FavoriteViewController.swift in Sources */,
 				451C09C022F93F4E00A70E00 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,20 +171,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		451C09C322F93F4E00A70E00 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				451C09C422F93F4E00A70E00 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		451C09C822F93F4F00A70E00 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				451C09C922F93F4F00A70E00 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		451C09E422F9419D00A70E00 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				451C09E522F9419D00A70E00 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -285,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6HRN2U594;
 				INFOPLIST_FILE = HraganaTranslation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6HRN2U594;
 				INFOPLIST_FILE = HraganaTranslation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
