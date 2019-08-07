@@ -32,6 +32,7 @@
                     </label>
                 </subviews>
             </view>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="EzO-hG-S9p" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="9N9-Vb-H3W"/>
                 <constraint firstAttribute="bottom" secondItem="EzO-hG-S9p" secondAttribute="bottom" constant="5" id="atA-qt-VEB"/>
