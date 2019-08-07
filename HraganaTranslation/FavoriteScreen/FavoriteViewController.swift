@@ -13,6 +13,7 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     var inputArray = [String]()
     var outputArray = [String]()
     
@@ -56,6 +57,33 @@ class FavoriteViewController: UIViewController {
 extension FavoriteViewController: UICollectionViewDelegate {
     
 }
+
+extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
+    //上のcellとの隙間を設定
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    //横のcellとの隙間を設定
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
+    //collectionViewのsectionの周りの隙間を設定
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if inputArray.count == 0 {
+            return UIEdgeInsets(top: collectionView.frame.height / 2 - 16, left: 16, bottom: 16, right: 16)
+        } else {
+            return UIEdgeInsets(top: 20.0, left: 16, bottom: 16.0, right: 16)
+        }
+    }
+    //cellのsizeを設定
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if inputArray.count == 0 {
+            return CGSize(width: view.frame.width - 32, height: 60)
+        } else {
+            return CGSize(width: view.frame.width - 32, height: 60)
+        }
+    }
+}
 extension FavoriteViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -74,6 +102,14 @@ extension FavoriteViewController: UICollectionViewDataSource {
             cell.outputLabel.text = ""
             return cell
         } else {
+            //cellの角を丸めて、影をつける
+            cell.backgroundColor = UIColor.white
+            cell.layer.cornerRadius = 2
+            cell.layer.shadowOpacity = 0.3
+            cell.layer.shadowRadius = 2
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 2, height: 2)
+            cell.layer.masksToBounds = false
             cell.inputLabel.text = inputArray[indexPath.row]
             cell.outputLabel.text = outputArray[indexPath.row]
             return cell
