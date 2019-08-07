@@ -203,6 +203,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fwE-yt-rJB" firstAttribute="top" secondItem="ItS-2K-UdY" secondAttribute="top" id="Vdd-oF-AL5"/>
                             <constraint firstItem="5Ot-Gw-lv3" firstAttribute="trailing" secondItem="ItS-2K-UdY" secondAttribute="trailing" constant="5" id="bhy-TA-bdv"/>
