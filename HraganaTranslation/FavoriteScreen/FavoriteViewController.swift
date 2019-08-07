@@ -17,6 +17,9 @@ class FavoriteViewController: UIViewController {
     var inputArray = [String]()
     var outputArray = [String]()
     
+    var selectedInputText: String?
+    var selectedOutputText: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,13 +40,19 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //お気に入りに保存されたものを取得する
-        if UserDefaults.standard.object(forKey: "inputArray") != nil,
-            UserDefaults.standard.object(forKey: "outputArray") != nil {
+        if UserDefaults.standard.object(forKey: "inputArray") != nil {
             inputArray = UserDefaults.standard.array(forKey: "inputArray") as! [String]
             outputArray = UserDefaults.standard.array(forKey: "outputArray") as! [String]
             collectionView.reloadData()
         } else {
             
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController" {
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.inputText = selectedInputText
+            detailViewController.outputText = selectedOutputText
         }
     }
     @objc func cellLongPressed(sender: UILongPressGestureRecognizer) {
@@ -91,7 +100,9 @@ class FavoriteViewController: UIViewController {
 }
 extension FavoriteViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("didSelect")
+        selectedInputText = inputArray[indexPath.row]
+        selectedOutputText = outputArray[indexPath.row]
+        self.performSegue(withIdentifier: "DetailViewController", sender: nil)
     }
 }
 
@@ -115,9 +126,9 @@ extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
     //cellのsizeを設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if inputArray.count == 0 {
-            return CGSize(width: view.frame.width - 32, height: 60)
+            return CGSize(width: view.frame.width - 32, height: 70)
         } else {
-            return CGSize(width: view.frame.width - 32, height: 60)
+            return CGSize(width: view.frame.width - 32, height: 70)
         }
     }
 }
