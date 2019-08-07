@@ -20,6 +20,9 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     override var isHighlighted: Bool {
         didSet {
             if self.isHighlighted {
+                UIView.animate(withDuration: 0.1) {
+                    self.backgroundColor = UIColor.lightGray
+                }
                 let shrink = CABasicAnimation(keyPath: "transform.scale")
                 //アニメーションの間隔
                 shrink.duration = 0.1
@@ -51,6 +54,9 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
                 expansion.fillMode = CAMediaTimingFillMode.forwards
                 //アニメーションの追加
                 self.layer.add(expansion, forKey: "expansion")
+                UIView.animate(withDuration: 0.2) {
+                    self.backgroundColor = UIColor.white
+                }
             }
         }
     }
