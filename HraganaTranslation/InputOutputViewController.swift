@@ -12,6 +12,7 @@ class InputOutputViewController: UIViewController {
     
     @IBOutlet weak var japaneseView: UIView!
     @IBOutlet weak var inputTextView: UITextView!
+    @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var japaneseInputView: UIView!
     @IBOutlet weak var inputButton: UIButton!
     @IBOutlet weak var hiraganaView: UIView!
@@ -214,16 +215,13 @@ class InputOutputViewController: UIViewController {
     
 }
 extension InputOutputViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if inputTextView.textColor == UIColor.lightGray {
-            inputTextView.text = nil
-            inputTextView.textColor = UIColor.black
-        }
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        placeholderLabel.isHidden = true
+        return true
     }
     func textViewDidEndEditing(_ textView: UITextView) {
-        if inputTextView.text.isEmpty {
-            inputTextView.text = "ここに日本語を入力してください。"
-            inputTextView.textColor = UIColor.lightGray
+        if(textView.text.isEmpty){
+            placeholderLabel.isHidden = false
         }
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
