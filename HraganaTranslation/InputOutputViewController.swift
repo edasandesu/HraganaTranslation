@@ -81,7 +81,6 @@ class InputOutputViewController: UIViewController {
         inputButton.layer.cornerRadius = 16
         inputButton.layer.shadowOpacity = 0.5
         inputButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        
     }
     //日本語をルビに直す
     func gooHiraganaRequest(inputText: String) {
@@ -133,7 +132,6 @@ class InputOutputViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             self.inputButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
-        
     }
     //buttonが押された時の処理
     @IBAction func inputButton(_ sender: Any) {
@@ -182,11 +180,21 @@ class InputOutputViewController: UIViewController {
             alert.addAction(OKAction)
             present(alert, animated: true, completion: nil)
         } else {
-            //お気に入りに保存する
-            self.inputArray.append(self.inputTextView.text!)
-            self.outputArray.append(self.outputTextView.text!)
-            UserDefaults.standard.set(self.inputArray, forKey: "inputArray")
-            UserDefaults.standard.set(self.outputArray, forKey: "outputArray")
+            if UserDefaults.standard.object(forKey: "inputArray") != nil {
+                self.inputArray = UserDefaults.standard.array(forKey: "inputArray") as! [String]
+                self.outputArray = UserDefaults.standard.array(forKey: "outputArray") as! [String]
+                //お気に入りに保存する
+                self.inputArray.append(self.inputTextView.text!)
+                self.outputArray.append(self.outputTextView.text!)
+                UserDefaults.standard.set(self.inputArray, forKey: "inputArray")
+                UserDefaults.standard.set(self.outputArray, forKey: "outputArray")
+            } else {
+                //お気に入りに保存する
+                self.inputArray.append(self.inputTextView.text!)
+                self.outputArray.append(self.outputTextView.text!)
+                UserDefaults.standard.set(self.inputArray, forKey: "inputArray")
+                UserDefaults.standard.set(self.outputArray, forKey: "outputArray")
+            }
             let alert = UIAlertController(title: "結果を保存しました！", message: "", preferredStyle: UIAlertController.Style.alert)
             let OKAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: {
                 //ボタンが押された時の処理を書く(クロージャ実装)
