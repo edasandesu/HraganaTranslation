@@ -18,7 +18,7 @@ class InputOutputViewController: UIViewController {
     @IBOutlet weak var outputTextView: UITextView!
     @IBOutlet weak var hiraganaOutputView: UIView!
     
-    let gooAPI = "＊＊＊＊＊＊＊"//APIキーを入力
+    let gooAPI = "＊＊＊＊＊＊"//APIキーを入力
     let gooRequestURL = "https://labs.goo.ne.jp/api/hiragana"
     let outputType = "hiragana"
     
@@ -172,11 +172,6 @@ class InputOutputViewController: UIViewController {
         inputTextView.text = ""
         //textViewの中身をクリア
         outputTextView.text = ""
-        //placeholderを表示する
-        if inputTextView.text.isEmpty {
-            inputTextView.text = "ここに日本語を入力してください。"
-            inputTextView.textColor = UIColor.lightGray
-        }
     }
     
     @IBAction func saveButton(_ sender: Any) {
