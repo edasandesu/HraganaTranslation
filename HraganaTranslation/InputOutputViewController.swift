@@ -18,7 +18,7 @@ class InputOutputViewController: UIViewController {
     @IBOutlet weak var outputTextView: UITextView!
     @IBOutlet weak var hiraganaOutputView: UIView!
     
-    let gooAPI = "******"//APIキーを入力
+    let gooAPI = "＊＊＊＊＊＊＊"//APIキーを入力
     let gooRequestURL = "https://labs.goo.ne.jp/api/hiragana"
     let outputType = "hiragana"
     
@@ -31,6 +31,12 @@ class InputOutputViewController: UIViewController {
         inputTextView.delegate = self
         viewCreate()
         buttonGenerate()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        inputTextView.text = "ここに日本語を入力してください。"
+        inputTextView.textColor = UIColor.lightGray
+        inputTextView.delegate = self
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -166,6 +172,11 @@ class InputOutputViewController: UIViewController {
         inputTextView.text = ""
         //textViewの中身をクリア
         outputTextView.text = ""
+        //placeholderを表示する
+        if inputTextView.text.isEmpty {
+            inputTextView.text = "ここに日本語を入力してください。"
+            inputTextView.textColor = UIColor.lightGray
+        }
     }
     
     @IBAction func saveButton(_ sender: Any) {
@@ -208,6 +219,18 @@ class InputOutputViewController: UIViewController {
     
 }
 extension InputOutputViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if inputTextView.textColor == UIColor.lightGray {
+            inputTextView.text = nil
+            inputTextView.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if inputTextView.text.isEmpty {
+            inputTextView.text = "ここに日本語を入力してください。"
+            inputTextView.textColor = UIColor.lightGray
+        }
+    }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             gooHiraganaRequest(inputText: self.inputTextView.text!)
