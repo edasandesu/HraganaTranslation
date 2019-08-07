@@ -43,6 +43,12 @@
                                                     <action selector="japaneseDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9L-Cl-Q0Y"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-Rp-BdJ">
+                                                <rect key="frame" x="15" y="15" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -52,6 +58,8 @@
                                             <constraint firstAttribute="bottom" secondItem="QLh-vW-j4J" secondAttribute="bottom" constant="8" id="QGE-dE-37t"/>
                                             <constraint firstItem="QLh-vW-j4J" firstAttribute="top" secondItem="bpw-Ex-EtX" secondAttribute="top" constant="8" id="i4q-ZI-jEd"/>
                                             <constraint firstAttribute="trailing" secondItem="eij-vq-eNO" secondAttribute="trailing" id="npn-0H-NH5"/>
+                                            <constraint firstItem="y7A-Rp-BdJ" firstAttribute="top" secondItem="bpw-Ex-EtX" secondAttribute="top" constant="15" id="q6G-i0-5xk"/>
+                                            <constraint firstItem="y7A-Rp-BdJ" firstAttribute="leading" secondItem="bpw-Ex-EtX" secondAttribute="leading" constant="15" id="yx9-y5-9tG"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本語" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D99-wX-VZy">
@@ -170,6 +178,7 @@
                         <outlet property="japaneseInputView" destination="bpw-Ex-EtX" id="v7o-LL-bHO"/>
                         <outlet property="japaneseView" destination="J7X-Kg-i1L" id="uSP-cN-DEu"/>
                         <outlet property="outputTextView" destination="lol-fh-KcI" id="r5h-ME-KYU"/>
+                        <outlet property="placeholderLabel" destination="y7A-Rp-BdJ" id="84v-VT-k5D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
