@@ -33,12 +33,6 @@ class InputOutputViewController: UIViewController {
         viewCreate()
         buttonGenerate()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        inputTextView.text = "ここに日本語を入力してください。"
-        inputTextView.textColor = UIColor.lightGray
-        inputTextView.delegate = self
-    }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         writeBorderLine()
