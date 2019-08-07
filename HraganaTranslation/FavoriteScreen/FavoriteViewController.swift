@@ -27,8 +27,12 @@ class FavoriteViewController: UIViewController {
         navigationBar.delegate = self
         navigationBarSetting()
         
-        UserDefaults.standard.removeObject(forKey: "inputArray")
-        UserDefaults.standard.removeObject(forKey: "outputArray")
+        //長押しのgestureを使えるようにする
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed(sender:)))
+        //長押しの時間を決める
+        longPressRecognizer.minimumPressDuration = 0.5
+        longPressRecognizer.delegate = self
+        self.collectionView.addGestureRecognizer(longPressRecognizer)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,7 +46,38 @@ class FavoriteViewController: UIViewController {
             
         }
     }
-    
+    @objc func cellLongPressed(sender: UILongPressGestureRecognizer) {
+        // 押された位置のcellを取得
+        let point = sender.location(in: collectionView)
+        //cellのindexPathを取得
+        let indexPath = collectionView.indexPathForItem(at: point)
+        if indexPath == nil {
+            //長押しされた場所にcellが無いときは何もしない
+        } else if sender.state == UIGestureRecognizer.State.ended  {
+            // 長押しされた場合の処理
+            let alert = UIAlertController(title: "削除しますか？", message: "", preferredStyle: UIAlertController.Style.alert)
+            let OKAction = UIAlertAction(title: "削除", style: UIAlertAction.Style.default, handler: {
+                //ボタンが押された時の処理を書く(クロージャ実装)
+                (action: UIAlertAction!) -> Void in
+                //配列にあるinput,outputのデータを削除
+                self.inputArray.remove(at: indexPath!.row)
+                self.outputArray.remove(at: indexPath!.row)
+                //UserDefaultsにあるデータを削除
+                UserDefaults.standard.removeObject(forKey: "inputArray")
+                UserDefaults.standard.removeObject(forKey: "outputArray")
+                self.collectionView.reloadData()
+                //UserDefaultsに再度保存
+                UserDefaults.standard.set(self.inputArray, forKey: "inputArray")
+                UserDefaults.standard.set(self.outputArray, forKey: "outputArray")
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (UIAlertAction) in
+                print("cancel")
+            }
+            alert.addAction(OKAction)
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
     func navigationBarSetting() {
         //navigationBarの色を設定
         navigationBar.barTintColor = UIColor.white
@@ -55,7 +90,9 @@ class FavoriteViewController: UIViewController {
     }
 }
 extension FavoriteViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("didSelect")
+    }
 }
 
 extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
@@ -97,7 +134,10 @@ extension FavoriteViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCell", for: indexPath) as! FavoriteCollectionViewCell
+        
         if inputArray.count == 0 {
+            cell.layer.shadowColor = UIColor.white.cgColor
+            cell.isUserInteractionEnabled = false
             cell.inputLabel.text = "お気に入りを保存するとここに表示されます。"
             cell.outputLabel.text = ""
             return cell
@@ -110,11 +150,15 @@ extension FavoriteViewController: UICollectionViewDataSource {
             cell.layer.shadowColor = UIColor.black.cgColor
             cell.layer.shadowOffset = CGSize(width: 2, height: 2)
             cell.layer.masksToBounds = false
+            cell.isUserInteractionEnabled = true
             cell.inputLabel.text = inputArray[indexPath.row]
             cell.outputLabel.text = outputArray[indexPath.row]
             return cell
         }
     }
+}
+extension FavoriteViewController: UIGestureRecognizerDelegate {
+    
 }
 extension FavoriteViewController: UINavigationBarDelegate {
     //navigationBarのPositionをステータスバーまで伸ばす
