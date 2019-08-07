@@ -30,24 +30,14 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNo-Vz-Gy0">
-                        <rect key="frame" x="0.0" y="57" width="279" height="1"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="NSz-B7-3Hb"/>
-                        </constraints>
-                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="EzO-hG-S9p" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="9N9-Vb-H3W"/>
-                <constraint firstItem="vNo-Vz-Gy0" firstAttribute="top" secondItem="EzO-hG-S9p" secondAttribute="bottom" constant="4" id="Izb-My-6oK"/>
-                <constraint firstAttribute="trailing" secondItem="vNo-Vz-Gy0" secondAttribute="trailing" id="PoC-Ia-peR"/>
+                <constraint firstAttribute="bottom" secondItem="EzO-hG-S9p" secondAttribute="bottom" constant="5" id="atA-qt-VEB"/>
                 <constraint firstAttribute="trailing" secondItem="rjj-I5-fiq" secondAttribute="trailing" constant="20" id="bRP-W8-WNb"/>
                 <constraint firstItem="EzO-hG-S9p" firstAttribute="top" secondItem="rjj-I5-fiq" secondAttribute="bottom" constant="5" id="eUa-pZ-5ZW"/>
-                <constraint firstItem="vNo-Vz-Gy0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fBd-x4-jno"/>
                 <constraint firstItem="rjj-I5-fiq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="kRU-1S-HZg"/>
-                <constraint firstAttribute="bottom" secondItem="vNo-Vz-Gy0" secondAttribute="bottom" id="lIM-k9-OKy"/>
                 <constraint firstAttribute="trailing" secondItem="EzO-hG-S9p" secondAttribute="trailing" constant="20" id="s1E-Bh-w4p"/>
                 <constraint firstItem="rjj-I5-fiq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="zrL-px-ADh"/>
             </constraints>
