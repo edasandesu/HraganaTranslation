@@ -17,6 +17,7 @@
 		451C09DD22F940DF00A70E00 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09DC22F940DF00A70E00 /* NavigationController.swift */; };
 		451C09DF22F940F600A70E00 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09DE22F940F600A70E00 /* TabBarController.swift */; };
 		451C09E622F9419D00A70E00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451C09E422F9419D00A70E00 /* Main.storyboard */; };
+		451C09F222FAEEC400A70E00 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C09F122FAEEC400A70E00 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		451C09DC22F940DF00A70E00 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		451C09DE22F940F600A70E00 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		451C09E522F9419D00A70E00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		451C09F122FAEEC400A70E00 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				451C09BF22F93F4E00A70E00 /* AppDelegate.swift */,
 				451C09D322F9407100A70E00 /* InputOutputViewController.swift */,
 				451C09DB22F9409D00A70E00 /* FavoriteScreen */,
+				451C09F122FAEEC400A70E00 /* DetailViewController.swift */,
 				451C09DC22F940DF00A70E00 /* NavigationController.swift */,
 				451C09DE22F940F600A70E00 /* TabBarController.swift */,
 				451C09E422F9419D00A70E00 /* Main.storyboard */,
@@ -165,6 +168,7 @@
 				451C09DF22F940F600A70E00 /* TabBarController.swift in Sources */,
 				451C09D622F9408500A70E00 /* FavoriteViewController.swift in Sources */,
 				451C09C022F93F4E00A70E00 /* AppDelegate.swift in Sources */,
+				451C09F222FAEEC400A70E00 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
