@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,42 +12,52 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FavoriteCollectionViewCell" customModule="HraganaTranslation" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="279" height="85"/>
+            <rect key="frame" x="0.0" y="0.0" width="279" height="58"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="279" height="85"/>
+                <rect key="frame" x="0.0" y="0.0" width="279" height="58"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjj-I5-fiq">
-                        <rect key="frame" x="20" y="0.0" width="239" height="50"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjj-I5-fiq">
+                        <rect key="frame" x="20" y="5" width="239" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzO-hG-S9p">
-                        <rect key="frame" x="20" y="58" width="239" height="27"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzO-hG-S9p">
+                        <rect key="frame" x="20" y="31.5" width="239" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNo-Vz-Gy0">
+                        <rect key="frame" x="0.0" y="57" width="279" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="NSz-B7-3Hb"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="EzO-hG-S9p" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="9N9-Vb-H3W"/>
-                <constraint firstItem="EzO-hG-S9p" firstAttribute="top" secondItem="rjj-I5-fiq" secondAttribute="bottom" constant="8" id="aaj-Gi-u6u"/>
+                <constraint firstItem="vNo-Vz-Gy0" firstAttribute="top" secondItem="EzO-hG-S9p" secondAttribute="bottom" constant="4" id="Izb-My-6oK"/>
+                <constraint firstAttribute="trailing" secondItem="vNo-Vz-Gy0" secondAttribute="trailing" id="PoC-Ia-peR"/>
                 <constraint firstAttribute="trailing" secondItem="rjj-I5-fiq" secondAttribute="trailing" constant="20" id="bRP-W8-WNb"/>
-                <constraint firstAttribute="bottom" secondItem="EzO-hG-S9p" secondAttribute="bottom" id="iVF-8J-Xmh"/>
-                <constraint firstItem="rjj-I5-fiq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kRU-1S-HZg"/>
+                <constraint firstItem="EzO-hG-S9p" firstAttribute="top" secondItem="rjj-I5-fiq" secondAttribute="bottom" constant="5" id="eUa-pZ-5ZW"/>
+                <constraint firstItem="vNo-Vz-Gy0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fBd-x4-jno"/>
+                <constraint firstItem="rjj-I5-fiq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="kRU-1S-HZg"/>
+                <constraint firstAttribute="bottom" secondItem="vNo-Vz-Gy0" secondAttribute="bottom" id="lIM-k9-OKy"/>
                 <constraint firstAttribute="trailing" secondItem="EzO-hG-S9p" secondAttribute="trailing" constant="20" id="s1E-Bh-w4p"/>
                 <constraint firstItem="rjj-I5-fiq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="zrL-px-ADh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="279" height="85"/>
+            <size key="customSize" width="279" height="64"/>
             <connections>
                 <outlet property="inputLabel" destination="rjj-I5-fiq" id="RNI-AM-yEB"/>
                 <outlet property="outputLabel" destination="EzO-hG-S9p" id="SeW-N2-zZx"/>
             </connections>
-            <point key="canvasLocation" x="303.62318840579712" y="115.51339285714285"/>
+            <point key="canvasLocation" x="303.62318840579712" y="107.8125"/>
         </collectionViewCell>
     </objects>
 </document>
