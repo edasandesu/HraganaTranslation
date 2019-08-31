@@ -28,7 +28,6 @@ class InputOutputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         inputTextView.delegate = self
         viewCreate()
         buttonGenerate()
