@@ -15,7 +15,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var outputModalView: UIView!
     @IBOutlet weak var outputTextView: UITextView!
     
-    
     var inputText: String?
     var outputText: String?
     
