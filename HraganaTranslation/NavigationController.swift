@@ -11,7 +11,7 @@ import UIKit
 class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //Barの色を変更
         navigationBar.barTintColor = UIColor.white
         //itemの色を変更
         navigationBar.tintColor = UIColor.orange
@@ -20,16 +20,4 @@ class NavigationController: UINavigationController {
             .foregroundColor: UIColor.orange
         ]
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
